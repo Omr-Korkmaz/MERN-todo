@@ -1,12 +1,12 @@
 import "./App.css";
-import TodoCard from "./components/TodoCard";
-import TodoCreate from "./components/TodoCreate";
+import TodoContainer from "./components/TodoContainer";
+import AddTodo from "./components/AddTodo";
 
 const App = () => {
   return (
     <div className="App">
-      <TodoCreate />
-      <TodoCard />
+      <AddTodo />
+      <TodoContainer />
     </div>
   );
 }
