@@ -30,6 +30,7 @@ const TodoContainer = () => {
                 title={todo.title}
                 detail={todo.detail}
                 date={todo.date}
+                complete={todo.complete}
               />
             ))}
           </Box>

@@ -6,8 +6,9 @@ const GET_TODOS = gql`
       id
       title
       detail
-      
+      complete      
     }
   }
 `;
+
 export default GET_TODOS;

@@ -7,7 +7,7 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
+import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
 import { useState } from "react";
 import { ADD_TODO } from "../graphql/Mutation";
 import GET_TODOS from "../graphql/Queries";
@@ -29,6 +29,7 @@ const AddTodo = () => {
         title: todo.title,
         detail: todo.detail,
         date: todo.date,
+        complete: false,
       },
       refetchQueries: [
         {
@@ -40,7 +41,7 @@ const AddTodo = () => {
       title: "",
       detail: "",
       date: "",
-    })
+    });
   };
 
   return (
@@ -101,7 +102,6 @@ const AddTodo = () => {
                     type="date"
                     value={moment(todo.date).format("yyyy-MM-DD")}
                     onChange={(e) => setTodo({ ...todo, date: e.target.value })}
-                    placeholder="Type your message here"
                     variant="outlined"
                     fullWidth
                   />
@@ -109,7 +109,7 @@ const AddTodo = () => {
 
                 <Grid item xs={12}>
                   <Button
-                  endIcon={<AddCircleOutlinedIcon />}
+                    endIcon={<AddCircleOutlinedIcon />}
                     type="submit"
                     variant="contained"
                     color="primary"

@@ -1,8 +1,4 @@
-
-
-
-
-.container{
+.container {
     position: relative;
     background: cornsilk;
     border-radius: 7px;
@@ -17,55 +13,70 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
- 
+    cursor: pointer;
+    transition: transform 0.2s;
 }
-.container_title{
+
+.container:hover {
+    transform: scale(1.1);
+    border: 0.5px solid red;
+    box-shadow: 0 4px 8px rgb(253, 159, 159);
+}
+
+.container_title {
     font-size: 1.2em;
     margin: 10px;
-    
-
 }
 
-  .container_detail{
-font-style: italic;
+.container_detail {
+    font-style: italic;
+}
 
-  }
+.container_date {
+    color: rgb(217, 204, 204);
+    font-size: 0.8rem;
+}
 
-  .container_date{
-      color: gray;
-      font-size: 0.8rem;
-  }
-  .container_btnremove{
-      position: absolute;
-      bottom:-20px;
-      right: 10px;
-      padding: 10px;
+.container_btnremove:hover {
+    padding: 10px;
+    color: rgb(231, 19, 19);
+    border: 1px solid rgb(236, 7, 7);
+    border-radius: 50%;
+    background-color: rgb(235, 242, 13);
+    cursor: pointer;
+}
+
+.todo_body {
+    flex-grow: 10;
+}
+
+.container_line {
+    text-align: center;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container_completed {
+    background-color: gray;
+    color: rgb(247, 237, 226);
+    text-decoration: line-through;
+}
+
+.container_uncompleted {
+    background-color: rgb(97, 69, 255);
+    color: rgb(255, 255, 255);
+}
+
+.container_btnremove {
+    position: absolute;
+    bottom: -20px;
+    right: 10px;
+    padding: 10px;
     color: rgb(231, 19, 19);
     background-color: antiquewhite;
     border: 1px solid cornsilk;
     border-radius: 50%;
 
     cursor: pointer;
-  }
-  .container_btnremove:hover{
-    padding: 10px;
-  color: rgb(231, 19, 19);
-  border: 1px solid rgb(236, 7, 7);
-  border-radius: 50%;
-  background-color: rgb(180, 183, 153);
-
-  cursor: pointer;
 }
-
-
-  .todo_body{
-      flex-grow: 10;
-  }
-  .container_line{
-      text-align: center;
-      width: 80%;
-      margin-right: auto;
-      margin-left: auto;
-      
-
-  }
