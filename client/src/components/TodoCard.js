@@ -4,7 +4,18 @@ import { DELETE_TODO, UPDATE_TODO } from "../graphql/Mutation";
 
 import GET_TODOS from "../graphql/Queries";
 import styles from "./TodoCard.module.css";
-import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteIcon from '@mui/icons-material/Delete';
+
+
+
+
+
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 
 
 const TodoCard = ({ title, id, detail, date, complete }) => {
@@ -40,29 +51,38 @@ const TodoCard = ({ title, id, detail, date, complete }) => {
   };
 
   return (
-    <div
-      onClick={() => update(id)}
-      className={`${styles.container}  ${
-        complete === true
-          ? styles.container_completed
-          : styles.container_uncompleted
-      }`}
-    >
-      <div className={styles.todo_body}>
-        <h1 className={styles.container_title}>{title}</h1>
-        <hr className={styles.container_line} />
 
-        <p className={styles.container_detail}>{detail}</p>
-        <p className={styles.container_date}>
+
+    <Card sx={{ maxWidth: 345 }}
+       onClick={() => update(id)}
+       className={`${styles.container}  ${
+         complete === true
+           ? styles.container_completed
+           : styles.container_uncompleted
+       }`}>
+      <CardActionArea>
+    
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {title}
+          </Typography>
+          <Typography variant="h6" >
+          {detail}
+          </Typography>
+
+          <Typography variant="body2" >
           Created ({moment(date).format("MMMM DD YY")})
-        </p>
-      </div>
-      <DeleteIcon
-        size="large"
-        className={styles.container_btnremove}
-        onClick={() => removeTodo(id)}
-      />
-    </div>
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+      
+        <DeleteIcon  sx={{ "&:hover": { color: "red" } }}   size="large" color="primary"   onClick={() => removeTodo(id)}/>
+    
+      </CardActions>
+    </Card>
+
+
   );
 };
 
