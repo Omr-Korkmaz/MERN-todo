@@ -45,8 +45,8 @@ const AddTodo = () => {
 
   return (
     <div>
-      <Typography gutterBottom variant="h3" align="center">
-        Graphql-React-Mongo-Express
+      <Typography gutterBottom variant="h4" align="center" margin={5}>
+        Apollo Grapql (MERN) TodoList
       </Typography>
       <Grid>
         <Card style={{ maxWidth: 450, padding: "10px 5px", margin: "0 auto" }}>
@@ -61,7 +61,6 @@ const AddTodo = () => {
               gutterBottom
               align="center"
             >
-              {/* <pre>{JSON.stringify(todo, null, "/t")}</pre> */}
               Fill up the TODO list and do it within 24 hours :)
             </Typography>
             <form onSubmit={submitHandle}>
