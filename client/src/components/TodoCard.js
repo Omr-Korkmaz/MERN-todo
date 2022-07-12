@@ -13,7 +13,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
@@ -77,7 +76,7 @@ const TodoCard = ({ title, id, detail, date, complete }) => {
       </CardActionArea>
       <CardActions>
       
-        <DeleteIcon  sx={{ "&:hover": { color: "red" } }}   size="large" color="primary"   onClick={() => removeTodo(id)}/>
+        <DeleteIcon  sx={{ "&:hover": {  color: "red" } }}   size="large" color="primary"   onClick={() => removeTodo(id)}/>
     
       </CardActions>
     </Card>

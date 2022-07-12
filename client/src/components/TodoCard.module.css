@@ -13,7 +13,6 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
 .container:hover {
@@ -26,14 +25,17 @@
 
 
 .container_completed {
-    color: rgb(247, 237, 226);
+ 
     text-decoration: line-through;
-    background: red;
+    opacity: 90%;
+    border: 1px solid #1976d1 ;
+    
+   
 
 }
 
 .container_uncompleted {
-    background-color:  #1976d1;
+
     color: rgb(255, 255, 255);
 }
 
