@@ -1,4 +1,4 @@
-import Todo from "./models/Todo.js";
+import Todo from "../models/Todo.js";
 
 const resolvers = {
   Query: {
@@ -10,8 +10,6 @@ const resolvers = {
       const todo = await Todo.findById(args.id);
       return todo;
     },
-
-
   },
   Mutation: {
     addTodo: async (parent, args) => {
@@ -19,7 +17,7 @@ const resolvers = {
         title: args.title,
         detail: args.detail,
         date: args.date,
-        complete: false
+        complete: false,
       });
       await newTodo.save();
       return newTodo;
@@ -30,10 +28,10 @@ const resolvers = {
       return "Selected Item is deleted";
     },
 
-    updateTodo: async(_ ,{id, complete})=> {
-        await Todo.findByIdAndUpdate(id, {complete});
-        return true;
-      },
+    updateTodo: async (_, { id, complete }) => {
+      await Todo.findByIdAndUpdate(id, { complete });
+      return true;
+    },
   },
 };
 

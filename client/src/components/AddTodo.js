@@ -11,7 +11,6 @@ import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
 import { useState } from "react";
 import { ADD_TODO } from "../graphql/Mutation";
 import GET_TODOS from "../graphql/Queries";
-import moment from "moment";
 
 const AddTodo = () => {
   const [todo, setTodo] = useState({
@@ -97,15 +96,6 @@ const AddTodo = () => {
                     required
                   />
                 </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    type="date"
-                    value={moment(todo.date).format("yyyy-MM-DD")}
-                    onChange={(e) => setTodo({ ...todo, date: e.target.value })}
-                    variant="outlined"
-                    fullWidth
-                  />
-                </Grid>
 
                 <Grid item xs={12}>
                   <Button
@@ -123,10 +113,6 @@ const AddTodo = () => {
           </CardContent>
         </Card>
       </Grid>
-      {/* <input type='date'  value={moment(todo.date).format("MMMM DD YY")}
-                    onChange={e => setTodo({ ...todo, date: e.target.value })} >
-      
-      </input> */}
     </div>
   );
 };

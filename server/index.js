@@ -2,8 +2,8 @@ import dotenv from "dotenv";
 
 import express from "express";
 import { ApolloServer, gql } from "apollo-server-express";
-import resolvers from "./resolvers.js";
-import typeDefs from "./typeDefs.js";
+import resolvers from "./schema/resolvers.js";
+import typeDefs from "./schema/typeDefs.js";
 import cors from "cors";
 import mongoose from "mongoose";
 
@@ -26,15 +26,6 @@ const startApolloServer = async () => {
   });
   const PORT = process.env.PORT || 4000;
 
-  // try {
-  //     mongoose
-  //     .connect(process.env.DB, {
-  //       useNewUrlParser: true,
-  //       useUnifiedTopology: true,
-  //     })
-  // } catch (error) {
-  //     console.log(error);
-  // }
 
   mongoose
     .connect(process.env.DB, {
@@ -48,7 +39,6 @@ const startApolloServer = async () => {
     )
     .catch((error) => console.log(error, "Could not connect database!"));
 
-  // app.listen(PORT, ()=>console.log(` database connected and Listening on port ${PORT}...`));
 };
 
 startApolloServer();

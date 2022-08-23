@@ -1,7 +1,5 @@
 import { gql } from "apollo-server-express";
 
-
-
 const typeDefs = gql`
   scalar Date
   type Todo {
@@ -10,7 +8,6 @@ const typeDefs = gql`
     detail: String
     date: Date
     complete: Boolean
-
   }
 
   type Query {
@@ -21,10 +18,8 @@ const typeDefs = gql`
   type Mutation {
     addTodo(title: String, detail: String, date: Date): Todo
     deleteTodo(id: ID): String
-    updateTodo(id: ID!, complete: Boolean!) : Boolean
-
+    updateTodo(id: ID!, complete: Boolean!): Boolean
   }
 `;
 
 export default typeDefs;
-
