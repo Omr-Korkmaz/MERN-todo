@@ -1,14 +1,13 @@
-require('dotenv').config()
-const express = require ("express");
-const { ApolloServer, gql } =require ("apollo-server-express");
-const resolvers = require ("./schema/resolvers");
-const typeDefs =require ("./schema/typeDefs");
-const cors =require ("cors");
-const mongoose = require ("mongoose");
+require("dotenv").config();
+const express = require("express");
+const { ApolloServer } = require("apollo-server-express");
+const resolvers = require("./schema/resolvers");
+const typeDefs = require("./schema/typeDefs");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
 const startApolloServer = async () => {
   const app = express();
-  // dotenv.config();
 
   app.use(express.json());
   app.use(cors());
@@ -16,17 +15,16 @@ const startApolloServer = async () => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    // csrfPrevention: true,
+    // cache: 'bounded',
   });
 
   await server.start();
   server.applyMiddleware({ app });
-  app.use((req, res) => {
-    res.send("server Started");
-  });
+
   const PORT = process.env.PORT || 4000;
 
-
-  mongoose
+  mongoose //first connect database if it connected then start server...
     .connect(process.env.DB, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -37,7 +35,6 @@ const startApolloServer = async () => {
       )
     )
     .catch((error) => console.log(error, "Could not connect database!"));
-
 };
 
 startApolloServer();
