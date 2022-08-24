@@ -1,15 +1,14 @@
-import dotenv from "dotenv";
-
-import express from "express";
-import { ApolloServer, gql } from "apollo-server-express";
-import resolvers from "./schema/resolvers.js";
-import typeDefs from "./schema/typeDefs.js";
-import cors from "cors";
-import mongoose from "mongoose";
+require('dotenv').config()
+const express = require ("express");
+const { ApolloServer, gql } =require ("apollo-server-express");
+const resolvers = require ("./schema/resolvers");
+const typeDefs =require ("./schema/typeDefs");
+const cors =require ("cors");
+const mongoose = require ("mongoose");
 
 const startApolloServer = async () => {
   const app = express();
-  dotenv.config();
+  // dotenv.config();
 
   app.use(express.json());
   app.use(cors());

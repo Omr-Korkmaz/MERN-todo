@@ -1,4 +1,4 @@
-import Todo from "../models/Todo.js";
+const Todo = require("../models/Todo");
 
 const resolvers = {
   Query: {
@@ -35,4 +35,4 @@ const resolvers = {
   },
 };
 
-export default resolvers;
+module.exports= resolvers;
