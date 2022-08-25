@@ -19,11 +19,11 @@ const AddTodo = () => {
     date: "",
   });
 
-  const [addTodo] = useMutation(ADD_TODO);
+  const [addTodo] = useMutation(ADD_TODO); //addTodo is the function in the server mutation...
 
   const submitHandle = (event) => {
     event.preventDefault();
-    addTodo({
+    addTodo({     
       variables: {
         title: todo.title,
         detail: todo.detail,
