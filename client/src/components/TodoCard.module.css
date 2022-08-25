@@ -23,6 +23,7 @@
   text-decoration: line-through;
   opacity: 90%;
   border: 1px solid #1976d1;
+  background: red;
 }
 
 .container_uncompleted {

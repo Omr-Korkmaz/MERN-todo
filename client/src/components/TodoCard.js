@@ -61,8 +61,8 @@ const TodoCard = ({ title, id, detail, date, complete }) => {
           </Typography>
           <Typography variant="h6">{detail}</Typography>
 
-          <Typography variant="body2">
-            Created ({moment(date).format("MMMM DD YY")})
+          <Typography variant="body2" color="gray">
+            Created ({moment(date).format("MMMM DD")})
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -70,7 +70,7 @@ const TodoCard = ({ title, id, detail, date, complete }) => {
         <DeleteIcon
           sx={{ "&:hover": { color: "red" } }}
           size="large"
-          color="primary"
+          color="secondary"
           onClick={() => removeTodo(id)}
         />
       </CardActions>
